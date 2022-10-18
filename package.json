@@ -1,0 +1,27 @@
+{
+  "name": "projeto-m6-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:vinistm/projeto-m6-backend.git",
+  "author": "<vinicius.stmartins@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "ts-node-dev --ignore-watch node_modules src/server.ts",
+    "typeorm": "typeorm-ts-node-commonjs",
+    "test": "jest",
+    "build": "tsc",
+    "start": "node dist/src/server.js"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.0",
+    "@types/uuid": "^8.3.4",
+    "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "pg": "^8.8.0",
+    "reflect-metadata": "^0.1.13",
+    "tsc": "^2.0.4",
+    "typeorm": "^0.3.10"
+  }
+}
