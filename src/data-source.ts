@@ -1,30 +1,17 @@
+import "reflect-metadata";
 import { DataSource } from "typeorm";
-import "dotenv/config";
+require("dotenv").config();
 
-export const AppDataSource = new DataSource(
-  process.env.NODE_ENV === "test"
-    ? {
-        type: "sqlite",
-        database: ":memory:",
-        synchronize: true,
-        entities: ["src/entities/*.ts"],
-      }
-    : {
-        type: "postgres",
-        url: process.env.DATABASE_URL,
-        ssl:
-          process.env.NODE_ENV === "production"
-            ? { rejectUnauthorized: false }
-            : false,
-        synchronize: false,
-        logging: true,
-        entities:
-          process.env.NODE_ENV === "production"
-            ? ["dist/src/entities/*.js"]
-            : ["src/entities/*.ts"],
-        migrations:
-          process.env.NODE_ENV === "production"
-            ? ["dist/src/migrations/*.js"]
-            : ["src/migrations/*.ts"],
-      }
-);
+const host = process.env.NODE_ENV === "dockerdev" ? "postgres" : "localhost";
+
+export const AppDataSource = new DataSource({
+  type: "postgres",
+  host,
+  port: 5432,
+  username: process.env.POSTGRES_USER,
+  password: process.env.POSTGRES_PASSWORD,
+  database: process.env.POSTGRES_DB,
+  synchronize: true,
+  entities: ["src/entities/**.entity.ts"],
+  migrations: ["migrations/**/*.ts"],
+});
