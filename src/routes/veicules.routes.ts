@@ -5,7 +5,7 @@ import listVeiculesController from "../controllers/veicules/listVeicule.controll
 import veiculeRegisterSchema from "../schemas/veicules/veicule.schema"
 const routes = Router()
 export const veiculeRoutes = () =>{
-    routes.get("/", listVeiculesController);
-    routes.post("/", schemaValidation(veiculeRegisterSchema),createVeiculeController);
+    routes.get("", listVeiculesController);
+    routes.post("", schemaValidation(veiculeRegisterSchema),createVeiculeController);
     return routes;
 }
