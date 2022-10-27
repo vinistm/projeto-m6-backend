@@ -1,8 +1,7 @@
 import{
-    Entity,Column,PrimaryGeneratedColumn,CreateDateColumn,OneToMany
+    Entity,Column,PrimaryGeneratedColumn,CreateDateColumn
 } from "typeorm"
 
-import { User } from "./user.entity";
 export enum VeiculeType{
     CAR = 'car',
     MOTORCYCLE = 'mortorcycle',
@@ -36,7 +35,6 @@ export class Veicule{
 
     @CreateDateColumn()
     date_public:Date
-    @OneToMany(() => User, (user) => user.id,{eager:true})
-    users:User[];
+    
 
 }
