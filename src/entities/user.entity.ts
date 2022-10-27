@@ -26,13 +26,13 @@ export class User {
     @Column({ nullable: false })
     purchaser: boolean;
 
-    @Column({ length: 250 })
+    @Column({ nullable: false })
     seller: boolean;
 
-    @Column({ length: 11 })
+    @Column()
     CPF: number;
 
-    @Column({ length: 250 })
+    @Column()
     birthday: Date;
 
     @OneToMany(() => UserInfo, (userInfo) => userInfo.user, {

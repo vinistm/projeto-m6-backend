@@ -1,4 +1,4 @@
-import { Veicule } from "../../entities/Veicule/veicule.entity";
+import { Veicule } from "../../entities/veicule.entity";
 import { IVeiculesRequest } from "../../interfaces/veicules";
 import { AppDataSource } from "../../data-source";
 import { AppError } from "../../errors";
