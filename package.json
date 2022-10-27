@@ -10,7 +10,7 @@
     "typeorm": "typeorm-ts-node-commonjs",
     "test": "jest",
     "build": "tsc",
-    "start": "node /src/server.js"
+    "start": "node dist/app.js"
   },
   "devDependencies": {
     "@types/node": "^18.11.0",
