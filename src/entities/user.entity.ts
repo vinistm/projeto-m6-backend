@@ -37,6 +37,6 @@ class User{
     }
     @OneToMany(() => Veicule,(veicule) => veicule.user)
     @JoinTable()
-    veicules:Veicule[]
+    veicule:Veicule[]
 }
 export {User}
