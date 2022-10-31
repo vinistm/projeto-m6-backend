@@ -1,8 +1,8 @@
 import { IUser,IUserRequest } from "../../interfaces/user";
 import { AppDataSource } from "../../data-source";
 import { User } from "../../entities/user.entity";
-import { AppError } from "../../errors";
-import { hash } from "bcryptjs";
+import { AppError } from "../../errors"
+import { hash } from "bcrypt";
 
 
 const createUserService = async ({ email, name, password,seller,purcharser }: IUserRequest) :Promise<IUser>=> {
