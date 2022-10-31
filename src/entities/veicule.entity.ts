@@ -1,6 +1,7 @@
 import{
-    Entity,Column,PrimaryGeneratedColumn,CreateDateColumn
+    Entity,Column,PrimaryGeneratedColumn,CreateDateColumn, ManyToOne
 } from "typeorm"
+import { User } from "./user.entity";
 
 export enum VeiculeType{
     CAR = 'car',
@@ -35,6 +36,9 @@ export class Veicule{
 
     @CreateDateColumn()
     date_public:Date
+
+    @ManyToOne(()=> User,(user)=> user.veicules)
+    user:User;
     
 
 }

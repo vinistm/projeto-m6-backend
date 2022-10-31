@@ -1,5 +1,6 @@
-import { Entity, Column, PrimaryGeneratedColumn, UpdateDateColumn, CreateDateColumn } from "typeorm";
+import { Entity, Column, PrimaryGeneratedColumn, UpdateDateColumn, CreateDateColumn, JoinTable , OneToMany} from "typeorm";
 import {v4 as uuid} from "uuid";
+import { Veicule } from "./veicule.entity";
 
 @Entity("users")
 
@@ -34,5 +35,8 @@ class User{
             this.id= uuid()
         }
     }
+    @OneToMany(() => Veicule,(veicule) => veicule.user)
+    @JoinTable()
+    veicules:Veicule[]
 }
 export {User}
