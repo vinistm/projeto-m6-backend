@@ -12,6 +12,6 @@ export const veiculeRoutes = () =>{
     routes.get("", listVeiculesController);
     routes.post("", schemaValidation(veiculeRegisterSchema),createVeiculeController);
     routes.delete("/:id",deleteVeiculeController);
-    routes.get(":/id",listVeiculeIDController);
+    routes.get("/:id",listVeiculeIDController);
     return routes;
 }
