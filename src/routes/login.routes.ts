@@ -4,6 +4,6 @@ import userLoginController from "../controllers/user/userLogin.controller";
 const routes = Router();
 
 export const loginRoutes = ()=>{
-    routes.post('/login', userLoginController);
+    routes.post('/', userLoginController);
     return routes;
 }
