@@ -2,7 +2,7 @@ import { User } from "../../entities/user.entity";
 import { AppDataSource } from "../../data-source";
 import { AppError } from "../../errors"
 import { IUserLogin } from "../../interfaces/user";
-import * as bcryptjs from "bcryptjs";
+import * as bcryptjs from "bcrypt";
 import jwt from "jsonwebtoken";
 
 const userLoginService = async ({ email, password }: IUserLogin) => {
