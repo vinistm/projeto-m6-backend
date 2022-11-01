@@ -3,7 +3,7 @@ import { IVeiculesRequest } from "../../interfaces/veicules";
 import { AppDataSource } from "../../data-source";
 import { AppError } from "../../errors";
 const createVeiculeService = async({
-    title,description,km,year,value,type,status
+    id,title,description,km,year,value,type,status
 }:IVeiculesRequest)=>{
     const veiculeRepository = AppDataSource.getRepository(Veicule)
     const veicule = await veiculeRepository.findOneBy({
@@ -13,6 +13,7 @@ const createVeiculeService = async({
         throw new AppError(400,"Veicule already exists");
     }
     const veiculeCreate = new Veicule();
+    veiculeCreate.id= id;
     veiculeCreate.title = title;
     veiculeCreate.description = description;
     veiculeCreate.km = km;
