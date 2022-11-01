@@ -16,3 +16,8 @@ export interface IUser {
     created_at: Date;
     updated_at: Date;
 }
+
+export interface IUserLogin {
+    email: string;
+    password: string;
+  }
