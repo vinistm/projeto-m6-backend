@@ -40,7 +40,7 @@ export class UserInfo {
   complement: string;
 
   @Column()
-  description:string;
+  descriptions:string;
 
 
   @CreateDateColumn()
