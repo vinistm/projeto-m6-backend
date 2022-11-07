@@ -16,7 +16,7 @@ export class Veicule{
     @Column({length:256})
     title:string;
 
-    @Column({length:256})
+    @Column()
     description:string;
 
     @Column()

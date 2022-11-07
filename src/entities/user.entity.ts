@@ -1,7 +1,8 @@
 import { Entity, Column, PrimaryGeneratedColumn, UpdateDateColumn, CreateDateColumn, JoinTable , OneToMany} from "typeorm";
 import {v4 as uuid} from "uuid";
 import { Veicule } from "./veicule.entity";
-
+import { UserInfo } from "./userInfos.entity";
+import { Exclude } from "class-transformer";
 @Entity("users")
 
 
@@ -35,6 +36,12 @@ class User{
             this.id= uuid()
         }
     }
+    @OneToMany(() => UserInfo, (userInfo) => userInfo.user, {
+        eager: true,
+      })
+    @Exclude()
+    @JoinTable()
+    userInfo: UserInfo;
     @OneToMany(() => Veicule,(veicule) => veicule.user)
     @JoinTable()
     veicule:Veicule[]
